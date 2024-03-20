@@ -1,0 +1,7 @@
+Things to learn 
+1. Insert multiple html request in python
+
+Work related 
+1. Try to work with a timer from online with C 
+2. Try to try WQ's double bank storage logic
+ 
