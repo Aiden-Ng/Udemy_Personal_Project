@@ -36,6 +36,10 @@ def main():
     driver.find_element(by = "xpath", value ="/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[1]/div/div/div[2]/div[3]/div[1]/a").click()
     ts.sleep(2)
     driver.find_element(by = "xpath", value ="/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[2]/form/ul/li[4]/table[2]/tbody/tr[1]/td/input").click()
+    driver.find_element(by = "xpath", value ="/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[2]/form/table[2]/tbody/tr[8]/td[10]/input").click()
+    driver.find_element(by = "xpath", value ="/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[2]/form/input[18]").click()
+
+    
 
     #return element.text
 
