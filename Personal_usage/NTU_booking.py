@@ -37,37 +37,39 @@ def courtTime(driver=None, string=None):
     wait = WebDriverWait(driver, 2)  # Create an instance of WebDriverWait
     if string == "8-9":
         #Trying to achieve backward if cannot book the first court
-        for i in range(8, 14):
+        for i in range(2, 8):
             try:
+                driver.find_element(by = "xpath", value ="/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[2]/form/ul/li[4]/table[2]/tbody/tr[1]/td/input").click()
                 driver.find_element(by="xpath", value="/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[2]/form/table[2]/tbody/tr[" + str(i) + "]/td[10]/input")
                 wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[2]/form/input[18]")))
             except TimeoutException:
                 driver.back()
     elif string_arg == "9-10":
-        for i in range (14, 20):
+        for i in range (8, 14):
             try:
-                driver.find_element(by="xpath", value="/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[2]/form/table[2]/tbody/tr[" + str(i) + "]/td[10]/input")
+                driver.find_element(by = "xpath", value ="/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[2]/form/ul/li[4]/table[2]/tbody/tr[1]/td/input").click()
+                driver.find_element(by="xpath", value="/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[2]/form/table[2]/tbody/tr[" + str(i) + "]/td[9]/input")
                 wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[2]/form/input[18]")))
             except TimeoutException:
                 driver.back()
     elif string_arg == "10-11":
-        for i in range (20, 26):
+        for i in range (14, 20):
             try:
-                driver.find_element(by="xpath", value="/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[2]/form/table[2]/tbody/tr[" + str(i) + "]/td[10]/input")
+                driver.find_element(by="xpath", value="/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[2]/form/table[2]/tbody/tr[" + str(i) + "]/td[9]/input")
                 wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[2]/form/input[18]")))
             except TimeoutException:
                 driver.back()
     elif string_arg == "11-12":
-        for i in range (26, 32):
-            driver.find_element(by = "xpath", value = "/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[2]/form/table[2]/tbody/tr["+ str(i) + "]/td[10]/input")
+        for i in range (20, 26):
+            driver.find_element(by = "xpath", value = "/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[2]/form/table[2]/tbody/tr["+ str(i) + "]/td[9]/input")
             status = wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[2]/form/input[18]")))
     elif string_arg == "12-13":
-        for i in range (32, 38):
-            driver.find_element(by = "xpath", value = "/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[2]/form/table[2]/tbody/tr["+ str(i) + "]/td[10]/input")
+        for i in range (26, 32):
+            driver.find_element(by = "xpath", value = "/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[2]/form/table[2]/tbody/tr["+ str(i) + "]/td[9]/input")
             status = wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[2]/form/input[18]")))
     elif string_arg == "14-15":
-        for i in range (38, 44):
-            driver.find_element(by = "xpath", value = "/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[2]/form/table[2]/tbody/tr["+ str(i) + "]/td[10]/input")
+        for i in range (32, 38):
+            driver.find_element(by = "xpath", value = "/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[2]/form/table[2]/tbody/tr["+ str(i) + "]/td[9]/input")
             status = wait.until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[2]/form/input[18]")))
     else:
         return 
@@ -81,7 +83,7 @@ def main():
     ts.sleep(2)
     driver.find_element(by = "xpath", value ="/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[1]/div/div/div[2]/div[3]/div[1]/a").click()
     ts.sleep(2)
-    driver.find_element(by = "xpath", value ="/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[2]/form/ul/li[4]/table[2]/tbody/tr[1]/td/input").click()
+    #driver.find_element(by = "xpath", value ="/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[2]/form/ul/li[4]/table[2]/tbody/tr[1]/td/input").click()
     courtTime( driver = driver, string = string_arg)
     driver.find_element( id ="xpath", value ="/html/body/div[3]/div/div/section[2]/div/div/p/table/tbody/tr/td[2]/form/input[18]").click()
 
